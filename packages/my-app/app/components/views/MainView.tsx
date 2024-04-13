@@ -13,6 +13,11 @@ import { useEthers } from "@usedapp/core";
 import Image from "next/image";
 import { useCallback, useEffect, useState } from "react";
 
+const LINEAR_GRADIENT_BACKROUND = {
+  backgroundImage:
+    "linear-gradient(90deg, #D7DAF3 0%, #D1DDF5 16.81%, #D4E1F8 26.36%, #D6E1F6 31.05%, #DFE3F4 34.93%, #F3E5EE 45.75%, #F6E4EB 49.78%, #F1E9F1 56.68%, #EBE9F5 61.89%, #E6EEFA 68.31%, #E3F0FA 75.49%, #E4F1FC 81%, #E0F2FA 100%)",
+};
+
 function MainView() {
   const [windowWidth, setWindowWidth] = useState(0);
 
@@ -43,7 +48,7 @@ function MainView() {
 
   return (
     <div className="relative">
-      <div className="absolute">
+      <div className="absolute w-full h-full flex flex-col">
         <Image
           src={backgroundImage}
           alt="background"
@@ -52,8 +57,9 @@ function MainView() {
             (backgroundImage.height * windowWidth) / backgroundImage.width
           }
         />
+        <div className="w-full h-full" style={LINEAR_GRADIENT_BACKROUND}></div>
       </div>
-      <div className="pt-20">
+      <div className="py-20">
         {account && (
           <button
             onClick={deactivate}
@@ -61,11 +67,17 @@ function MainView() {
             className="absolute top-4 right-4 flex justify-center items-center"
           >
             <Image src={walletBgImage} alt="wallet_bg" />
-            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 flex space-x-2">
-              <Image width={24} height={24} src={walletImage} alt="wallet" />
+            <div className="absolute w-full h-full flex space-x-2 justify-center items-center">
+              <Image
+                width={24}
+                height={24}
+                src={walletImage}
+                alt="wallet"
+                color={colors.primary}
+              />
               <BaseText
                 type="caption1"
-                color={colors["steeblue-dark"][10]}
+                color={colors["primary"]}
                 label={
                   account.substring(0, 6) +
                   "..." +
