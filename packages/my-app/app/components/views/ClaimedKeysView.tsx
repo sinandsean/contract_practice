@@ -1,12 +1,14 @@
 import BaseText from "@/app/components/atoms/BaseText";
 import ClaimedKey from "@/app/components/atoms/ClaimedKey";
 import KeyListBox from "@/app/components/atoms/KeyListBox";
-import { useClaimedKeys } from "@/app/contract/contractHooks";
+// import { useClaimedKeys } from "@/app/contract/contractHooks";
+import useClaimedKeys from "@/app/hooks/useClaimedKeys";
 import { colors } from "@/app/ui/theme/colors";
 import clsx from "clsx";
 
 function ClaimedKeysView({ className }: { className?: string }) {
-  const claimedKeys = useClaimedKeys();
+  // const claimedKeys = useClaimedKeys();
+  const { data: claimedKeys } = useClaimedKeys();
 
   return (
     <div

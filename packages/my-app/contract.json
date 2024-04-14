@@ -1,0 +1,25 @@
+{
+  "claimKey": [],
+  "claimedKeys": {
+    "value": [
+      [
+        {
+          "tokenURI": "img_key_g_3",
+          "claimedAt": 1712939208122
+        },
+        {
+          "tokenURI": "img_key_g_2",
+          "claimedAt": 1712939283333
+        },
+        {
+          "tokenURI": "img_key_g_1",
+          "claimedAt": 1712939383333
+        },
+        {
+          "tokenURI": "img_key_a_1",
+          "claimedAt": 1712939483333
+        }
+      ]
+    ]
+  }
+}
